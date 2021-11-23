@@ -305,3 +305,60 @@ function toHours(minutes) {
 
 //
 
+let countDown = (seconds) => {
+  for (let i = seconds; i > -1; i--) {
+    console.log(`There are ${i} seconds left until liftoff!`);
+  }
+  return "Lift Off!";
+}
+
+//
+
+function removeZeros(number) {
+  let newNum = '';
+  let numString = number.toString();
+  for (let i = 0; i < numString.length; i++) {
+    if (numString[i] != 0) {
+      newNum += (numString[i]);
+    }
+  }
+  return newNum;
+}
+
+//
+
+function alphabetCode(letter) {
+  let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  for (let i = 0; i <= letters.length; i++) {
+    if (letter === letters[i]) {
+      return i+1;
+    }
+  }
+}
+
+//
+
+function avgVel(posArray, time){
+  let change = posArray[2] - posArray[0];
+  return change/time;
+}
+
+//
+
+function rectangleSize(length, width) {
+  return length * width;
+}
+
+//
+
+function illegalWord(sentence, word) {
+  let words = sentence.split(" ");
+  for (let i = 0; i < words.length; i++) {
+    if (word.toLowerCase() === words[i]) {
+      return false;
+    } else return true;
+  }
+}
+
+//
+

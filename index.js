@@ -362,3 +362,164 @@ function illegalWord(sentence, word) {
 
 //
 
+function drinks(day){
+  if (day === 'm' || day === 'f') {
+    return 6;
+  }
+  if (day === 't') {
+    return 4;
+  }
+  if (day === 'w' || day === 'r') {
+    return 3;
+  }
+}
+
+//
+
+function enterTheBar(age) {
+  if (age >= 21) {
+    return true;
+  } else return false;
+}
+
+//
+
+function myGradeIs(gpa) {
+  if (gpa >= 4){
+    return 'A';
+  }
+  if (gpa >= 3) {
+    return 'B';
+  }
+  if (gpa >= 2) {
+    return 'C';
+  }
+  if (gpa >= 1) {
+    return 'D';
+  }
+  if (gpa < 1) {
+    return 'F';
+  }
+}
+
+//
+
+function isSchoolCancelled(temp) {
+  if (temp < -4) {
+    return true;
+  } else return false;
+}
+
+//
+
+const fizzBuzz = (num) => {
+  let output = {};
+  for (let i = 1; i <= num; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      output[i] = 'FizzBuzz';
+    }  else if (i % 3 === 0) {
+      output[i] = 'Fizz';      
+    } else if (i % 5 === 0) {
+      output[i] = 'Buzz';
+    } else {
+    output[i] = i;
+    }
+  }
+  return output;
+}
+
+//
+
+function blackjack(sum) {
+  if (sum < 15) {
+    return "hit";
+  }
+  if (sum >= 15 && sum <= 21) {
+    return "stand";
+  }
+  if (sum > 21) {
+    return "bust";
+  }
+}
+
+//
+
+function haveDetention(id) {
+  for (let i = 0; i < id.length; i++) {
+    if (id[i] > 6) {
+      return false
+    }
+  }
+  return true;
+}
+
+//
+
+function canNav(velocity, boatType){
+  let boatTypeL = boatType.toLowerCase();
+  if (boatTypeL === "rowboat" && velocity < 3) {
+    return true;
+  }
+  if (boatTypeL === "sailboat" && velocity < 7) {
+    return true;
+  }
+  if (boatTypeL === "ship" && velocity < 15) {
+    return true;
+  }
+  else return false;
+}
+
+//
+
+let makeCamelCase = (input) => {
+  let out = "";
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] === "_") {
+      i++;
+      out += input[i].toString().toUpperCase();
+    } else {
+    out += input[i];
+    }
+  }
+  return out;
+}
+
+//
+
+function highScore(studentScores) {
+  let out = 0;
+  for (let i = 0; i < studentScores.length; i++) {
+    if (studentScores[i] > out) {
+    out = studentScores[i];
+    }
+  }
+  return out;
+}
+
+//
+
+let lastFour = (socSec) => {
+  let string = socSec.toString();
+  let answer = string.slice(5, 9);
+  return answer;
+}
+
+//
+
+function twoStrikes(plates) {
+  let empty = [];
+  for (let i = 0; i < plates.length; i++) {
+    count = 0;
+    for (let j=0; j < plates.length; j++) {
+      if (plates[i] === plates[j]) {
+        count++;
+        if( count === 2) {
+          return plates[i];
+        }
+      }
+  }
+    } return empty;
+}
+
+//
+

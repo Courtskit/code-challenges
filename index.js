@@ -523,3 +523,18 @@ function twoStrikes(plates) {
 
 //
 
+function sumOfNegatives(numArray) {
+  let sum = 0;
+  for (let i = 0; i < numArray.length; i++) {
+    if (numArray[i] < 0) {
+      // let negArr = [];
+      // negArr = negArr.push(numArray[i]);
+      sum += numArray[i];
+    }
+  }
+  return sum;
+  return 0;
+}
+
+//
+

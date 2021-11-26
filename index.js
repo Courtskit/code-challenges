@@ -538,3 +538,24 @@ function sumOfNegatives(numArray) {
 
 //
 
+function nameInitials(fullName) {
+  let fullNameArr = fullName.split(' ');
+  let initials = '';
+  for (let i = 0; i < fullNameArr.length; i++) {
+      initials += fullNameArr[i][0];
+  }
+  return initials.toUpperCase();
+}
+
+//
+
+function rangeGen(min, max){
+  let outArr = [];
+  for (let i = min+1; i < max; i++) {
+    outArr.push(i)
+  }  
+  return outArr;
+}
+
+//
+

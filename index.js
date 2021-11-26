@@ -559,3 +559,24 @@ function rangeGen(min, max){
 
 //
 
+let backOfTheLine = (arrOfNames, numOfPositions) => {
+  if (numOfPositions > 0) {
+    for (let i = 0; i < numOfPositions; i++) {
+      let last = arrOfNames[arrOfNames.length-1];
+      arrOfNames.pop();
+      arrOfNames.unshift(last);
+      }
+      return arrOfNames
+  }
+  if (numOfPositions < 0) {
+    let abs = Math.abs(numOfPositions);
+    for (let i = 0; i < abs; i++) {
+      let first = arrOfNames[0];
+      arrOfNames.shift();
+      arrOfNames.push(first);
+      }
+      return arrOfNames
+  }
+}
+
+//

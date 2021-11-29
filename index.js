@@ -580,3 +580,43 @@ let backOfTheLine = (arrOfNames, numOfPositions) => {
 }
 
 //
+
+function maxError(wrongNums, correctNum){
+  let far = 0;
+  let arr = [];
+  for (let i = 0; i< wrongNums.length; i++) {
+    let value = correctNum - wrongNums[i];
+    let abs = Math.abs(value);
+    if (abs > far) {
+      far = abs
+      arr.push(wrongNums[i]);
+    }
+  }
+  return arr[arr.length-1];
+}
+
+//
+
+let myColleagues = (colleagues) => {
+  for (let i = 0; i < colleagues.length; i++) {
+    console.log(`${colleagues[i][0]} is the ${colleagues[i][1][0]} and is ${colleagues[i][1][1]}.`)
+  }
+  return true;
+}
+
+//
+
+function repeatedChars(charArray, numArray) {
+  let output = '';
+  for (let i = 0; i < charArray.length; i++) {
+    let letter = charArray[i];
+    let number = numArray[i];
+    for (let i = 0; i < number; i++) {
+      output += letter
+    }
+  }
+  return output;
+}
+
+//
+

@@ -622,3 +622,19 @@ function repeatedChars(charArray, numArray) {
 
 // Reverse Word with Recursion
 
+function reverseWord(inOrderString){
+
+  let wordLength = inOrderString.length
+
+  if (wordLength <=1) {
+    return inOrderString
+  }
+  // console.log(inOrderString.charAt(wordLength-1))
+
+  // console.log(reverseWord(inOrderString.substring(0, wordLength-1)))
+
+  return inOrderString.charAt(wordLength-1) + reverseWord(inOrderString.substring(0, wordLength-1))
+}
+
+//
+

@@ -687,3 +687,12 @@ let countCharacters = (str) => {
 
 //
 
+function pyramid(height) {
+  if (height === 0) {
+    return 0;
+  }
+  return (2*height-1) + pyramid(height-1);
+}
+
+//
+

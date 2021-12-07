@@ -657,3 +657,11 @@ myGPA(['B-','C+','B+','C-','A+'])
 
 //
 
+function carTrip(car, miles) {
+  car['miles'] += miles;
+  car['spareTiresUsed'] += (Math.floor(miles/ 1000))
+  return car;
+  }
+
+//
+

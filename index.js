@@ -665,3 +665,11 @@ function carTrip(car, miles) {
 
 //
 
+function currentGrade(student, improvement) {
+  student['grade']+= 1;
+  student['GPA']+= improvement;
+  return student;
+}
+
+//
+

@@ -641,3 +641,19 @@ function reverseWord(inOrderString){
 // Ternary
 
 // The syntax is a ? b : c, where a is the condition, b is the code to run when the condition returns true, and c is the code to run when the condition returns false.
+
+const myGPA = (arrOfGrades) => {
+  let cumulative = 0;
+  let convert = {
+    'A+':4.33, 'A':4.00, 'A-': 3.67, 'B+':3.33, 'B':3.00, 'B-':2.67, 'C+':2.33, 'C': 2.00, 'C-':1.67, 'D+':1.33, 'D':1.00, 'D-':0.67, 'F':0}
+
+  for (let i = 0; i < arrOfGrades.length; i++) {
+    cumulative += (convert[arrOfGrades[i]]);
+  }
+  return cumulative / arrOfGrades.length; 
+}
+
+myGPA(['B-','C+','B+','C-','A+'])
+
+//
+

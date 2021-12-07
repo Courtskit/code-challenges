@@ -696,3 +696,13 @@ function pyramid(height) {
 
 //
 
+function reverseWord(inOrderString){
+  let length = inOrderString.length;
+  if (length <= 1) {
+    return inOrderString;
+  }
+  return inOrderString.charAt(length-1) + reverseWord(inOrderString.substring(0, length-1))
+}
+
+//
+

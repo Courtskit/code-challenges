@@ -673,3 +673,17 @@ function currentGrade(student, improvement) {
 
 //
 
+let countCharacters = (str) => {
+  let output = {};
+  for (let i = 0; i < str.length; i++) {
+    if (output[str[i]]) {
+      output[str[i]]++
+    } else {
+      output[str[i]] = 1 
+    }
+  }
+  return output;
+}
+
+//
+

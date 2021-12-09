@@ -706,3 +706,23 @@ function reverseWord(inOrderString){
 
 //
 
+function FibonacciChecker(num) { 
+
+  let num1 = 0;
+  let num2 = 1;
+  let fibNum = 0;
+
+  for (let i = 0; i < num; i++) {
+    num1 = num2;
+    num2 = fibNum;
+    fibNum = num1 + num2;
+    if (num === fibNum) {
+      return 'yes'
+    }
+  }
+
+  return 'no';
+  
+}
+
+//

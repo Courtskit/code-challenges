@@ -705,6 +705,7 @@ function reverseWord(inOrderString){
 }
 
 //
+// will solve again with recursion 
 
 function FibonacciChecker(num) { 
 

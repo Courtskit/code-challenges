@@ -726,3 +726,72 @@ function FibonacciChecker(num) {
 }
 
 //
+
+const getEmployeeData = (arrOfEmployees) =>{
+  
+  let devTitle = '';
+  let totDevEmp = 0;
+  let totDevSals = 0;
+  let totDevBons = 0;
+
+  let pmTitle = '';
+  let totPMEmp = 0;
+  let totPMSals = 0;
+  let totPMBons = 0;
+
+  let desTitle = '';
+  let totDesEmp = 0;
+  let totDesSals = 0;
+  let totDesBons = 0;
+
+  arrOfEmployees.forEach(key => {
+    // Developer stats
+    if (key['title'] === 'developer') {
+      devTitle = key['title'];
+      totDevEmp++;
+      totDevSals += key['salary'];
+      totDevBons += key['bonus'];
+    }
+    // Product Manager stats
+    if (key['title'] === 'product manager') {
+      pmTitle = key['title'];
+      totPMEmp++;
+      totPMSals += key['salary'];
+      totPMBons += key['bonus'];
+    }
+    // Designer stats
+    if (key['title'] === 'designer') {
+      desTitle = key['title'];
+      totDesEmp++;
+      totDesSals += key['salary'];
+      totDesBons += key['bonus'];
+    }
+  });
+
+  return [
+    {
+      'title': devTitle,
+      'totalEmployees' : totDevEmp,
+      'avgSalary' : Math.floor(totDevSals/totDevEmp),
+      'avgBonus' : Math.floor(totDevBons/totDevEmp),
+      'avgTotalComp' : Math.floor((totDevBons/totDevEmp) + (totDevSals/totDevEmp)),
+    },
+    {
+      'title': pmTitle,
+      'totalEmployees' : totPMEmp,
+      'avgSalary' : Math.floor(totPMSals/totPMEmp),
+      'avgBonus' : Math.floor(totPMBons/totPMEmp),
+      'avgTotalComp' : Math.floor((totPMBons/totPMEmp) + (totPMSals/totPMEmp)),
+    },
+    {
+      'title': desTitle,
+      'totalEmployees' : totDesEmp,
+      'avgSalary' : Math.floor(totDesSals/totDesEmp),
+      'avgBonus' : Math.floor(totDesBons/totDesEmp),
+      'avgTotalComp' : Math.floor((totDesBons/totDesEmp) + (totDesSals/totDesEmp)),
+    }
+    ]
+}
+
+//
+

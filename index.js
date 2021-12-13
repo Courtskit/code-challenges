@@ -796,3 +796,17 @@ const getEmployeeData = (arrOfEmployees) =>{
 
 //
 
+function StringScramble(str1,str2) { 
+  let checkStr = '';
+  for (let i = 0; i < str2.length; i++) {
+    for(let j = 0; j < str1.length; j++) {
+      if(str2[i] === str1[j]) {
+        checkStr+= str1[j];
+      }
+    }
+  }
+  return checkStr === str2 ? true : false;
+}
+
+//
+

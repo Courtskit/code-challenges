@@ -884,4 +884,26 @@ function isPrime(num){
 
   //
 
+  function PalindromeTwo(str) { 
+    let backwardsStr = '';
+    let inOrderStr = '';
+    for (let i = str.length-1; i >= 0; i--) {
+      if (str[i].toUpperCase() != str[i].toLowerCase()) {
+        backwardsStr+= str[i];
+      }
+    }
+    for (let j = 0; j < str.length; j++) {
+      if (str[j].toUpperCase() != str[j].toLowerCase()) {
+        inOrderStr+= str[j];
+      }
+    }
+    if (inOrderStr.toLowerCase() === backwardsStr.toLowerCase()) {
+      return 'true';
+    } else {
+      return 'false'
+    }
+  }
+
+  //
+
   

@@ -906,4 +906,47 @@ function isPrime(num){
 
   //
 
+  function CountingMinutes(str) { 
+    let times = str.split('-');
+    let startTime = times[0]; // hour:minute
+    let start = startTime.split(':')
+    let startHour = start[0]; // hour
+    let startMin = start[1][0] + start[1][1];  // minute
+    let startAMorPM = start[1][2] + start[1][3]; // am or pm
+    let startHourAMorPM = startHour + startAMorPM;
+    let endTime = times[1]; // hour:minute
+    let end = endTime.split(':');
+    let endHour = end[0]; // hour
+    let endMin = end[1][0] + end[1][1];  // minute
+    let endAMorPM = end[1][2] + end[1][3]; // am or pm
+    let endHourAMorPM = endHour + endAMorPM;
+  
+    let hours = 
+    ['12am', '1am', '2am', '3am', '4am', '5am', '6am', '7am', '8am',
+     '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm',
+     '6pm', '7pm', '8pm', '9pm', '10pm', '11pm', '12am', '1am', '2am', '3am', '4am', '5am', '6am', '7am', '8am',
+     '9am', '10am', '11am', '12pm', '01pm', '2pm', '3pm', '4pm', '5pm',
+     '6pm', '7pm', '8pm', '9pm', '10pm', '11pm']
+  
+    let startInd = 0;
+    let endInd = 0;
+  
+    for(let i = 0; i < hours.length; i++) {
+      if (hours[i] === startHourAMorPM) {
+        startInd = i;
+        break;
+      }
+    }
+    for(let i = startInd+1; i < hours.length; i++) {
+      if (hours[i] === endHourAMorPM) {
+        endInd = i;
+        break;
+      }
+    }
+    let answer = ((endInd-startInd) * 60) - (startMin - endMin);
+    return answer;
+  }
+
+  //
+
   

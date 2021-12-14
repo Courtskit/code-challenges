@@ -796,17 +796,42 @@ const getEmployeeData = (arrOfEmployees) =>{
 
 //
 
+// function StringScramble(str1,str2) { 
+//   let checkStr = '';
+//   for (let i = 0; i < str2.length; i++) {
+//     for(let j = 0; j < str1.length; j++) {
+//       if(str2[i] === str1[j]) {
+//         checkStr+= str1[j];
+//       }
+//     }
+//   }
+//   return checkStr === str2 ? 'true' : 'false';
+// }
+
 function StringScramble(str1,str2) { 
   let checkStr = '';
-  for (let i = 0; i < str2.length; i++) {
-    for(let j = 0; j < str1.length; j++) {
-      if(str2[i] === str1[j]) {
-        checkStr+= str1[j];
-      }
+  for(let i = 0; i < str1.length; i++) {
+    if (str2.charAt(str1[i])){
+      checkStr+= str2[i];
     }
   }
-  return checkStr === str2 ? true : false;
+  return checkStr === str2 ? 'true' : 'false';
 }
+
+// ????????
 
 //
 
+function isPrime(num){
+  if (num%2 === 0 && num !== 2) {
+      return false
+    }
+    for (let i = 2; i < num; i++) {
+      if (num%i === 0) {
+        return false
+      }
+    }
+    return true
+  }
+
+  //

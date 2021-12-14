@@ -794,19 +794,20 @@ const getEmployeeData = (arrOfEmployees) =>{
     ]
 }
 
-//
+////////////////////////////////
 
-// function StringScramble(str1,str2) { 
-//   let checkStr = '';
-//   for (let i = 0; i < str2.length; i++) {
-//     for(let j = 0; j < str1.length; j++) {
-//       if(str2[i] === str1[j]) {
-//         checkStr+= str1[j];
-//       }
-//     }
-//   }
-//   return checkStr === str2 ? 'true' : 'false';
-// }
+
+function StringScramble(str1,str2) { 
+  let checkStr = '';
+  for (let i = 0; i < str2.length; i++) {
+    for(let j = 0; j < str1.length; j++) {
+      if(str2[i] === str1[j]) {
+        checkStr+= str1[j];
+      }
+    }
+  }
+  return checkStr === str2 ? 'true' : 'false';
+}
 
 function StringScramble(str1,str2) { 
   let checkStr = '';
@@ -819,6 +820,53 @@ function StringScramble(str1,str2) {
 }
 
 // ????????
+
+function StringScramble(str1,str2) { 
+  let checkStr = '';
+  for (let i = 0; i < str2.length; i++) {
+    for(let j = 0; j < str1.length; j++) {
+      if(str2[i] === str1[j]) {
+        checkStr+= str1[j];
+        break;
+      }
+    }
+  }
+  return checkStr === str2 ? 'true' : 'false';
+}
+// ......
+
+function StringScramble(str1,str2) { 
+  let checkStr = '';
+  for (let i = 0; i < str2.length; i++) {
+    for(let j = 0; j < str1.length; j++) {
+      if(str2[i] === str1[j]) {
+        checkStr+= str1[j];
+        str1[j] = '';
+        break;
+      }
+      console.log(str1)
+    }
+  }
+  return checkStr === str2 ? 'true' : 'false';
+}
+
+// ...?
+
+function StringScramble(str1,str2) { 
+  let checkStr = '';
+  for (let i = 0; i < str2.length; i++) {
+    for(let j = 0; j < str1.length; j++) {
+      if(str2[i] === str1[j]) {
+        checkStr+= str1[j];
+        str1 = str1.replace(str1[j], '');
+        break;
+      }
+    }
+  }
+  return checkStr === str2 ? 'true' : 'false';
+}
+
+//////////////////////////////
 
 //
 
@@ -835,3 +883,5 @@ function isPrime(num){
   }
 
   //
+
+  

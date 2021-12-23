@@ -945,7 +945,7 @@ function isPrime(num){
       if (hours[i] === endHourAMorPM) {
         endInd = i;
         break;
-      }
+      }/
     }
     let answer = ((endInd-startInd) * 60) - (startMin - endMin);
     return answer;

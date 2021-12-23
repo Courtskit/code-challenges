@@ -953,4 +953,34 @@ function isPrime(num){
 
   //
 
+  function ThirdGreatest(strArr) { 
+
+    let greatest = '';
+    let secGreatest = '';
+    let thirdGreatest = '';
+  
+    for (let i = 0; i < strArr.length; i++) {
+      if (strArr[i].length > greatest.length) {
+        greatest = strArr[i];
+      }
+    }
+  
+    for (let i = 0; i < strArr.length; i++) {
+      if (strArr[i].length > secGreatest.length && strArr[i] !== greatest) {
+        secGreatest = strArr[i];
+      }
+    }
+  
+    for (let i = 0; i < strArr.length; i++) {
+      if (strArr[i].length > thirdGreatest.length && strArr[i] !== greatest && strArr[i] !== secGreatest) {
+        thirdGreatest = strArr[i];
+      }
+    }
+  
+    return thirdGreatest;
+  
+  }
+
+  //
+
   

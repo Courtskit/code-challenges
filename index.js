@@ -1042,7 +1042,42 @@ function isPrime(num){
     return output;
     }
 
+      // if the array position goes past z .. reloop through the array..
+  // subtracting the shifts that were already accounted for
+
+  function CaesarCipher(str,num) { 
+
+    let alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
+    'n','o','p','q','r','s','t','u','v','w','x','y','z'];
+    
+    let output = '';
+    
+    let temp = 0;
+    
+    for (let i = 0; i < str.length; i++) {
+    
+      if (str[i].toUpperCase() === str[i].toLowerCase() ) { // if not a letter 
+        output += str[i];
+      } else if (str[i] === str[i].toUpperCase()) { // if uppercase
+        temp = alphabet.indexOf(str[i].toLowerCase()) + parseInt(num);
+        if (alphabet[temp] === undefined) {
+          output += alphabet[temp - 26]
+        }else{
+        output += alphabet[temp].toUpperCase();
+        }
+      } else {
+        temp = alphabet.indexOf(str[i].toLowerCase()) + parseInt(num);
+        if (alphabet[temp] === undefined) {
+          output += alphabet[temp - 26]
+        }else{
+        output += alphabet[temp];
+        }
+      }
+      
+    }
+    return output;
+    }
+
+
     //
 
-
-    

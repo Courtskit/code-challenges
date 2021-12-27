@@ -884,200 +884,200 @@ function isPrime(num){
 
   //
 
-  function PalindromeTwo(str) { 
-    let backwardsStr = '';
-    let inOrderStr = '';
-    for (let i = str.length-1; i >= 0; i--) {
-      if (str[i].toUpperCase() != str[i].toLowerCase()) {
-        backwardsStr+= str[i];
-      }
+function PalindromeTwo(str) { 
+  let backwardsStr = '';
+  let inOrderStr = '';
+  for (let i = str.length-1; i >= 0; i--) {
+    if (str[i].toUpperCase() != str[i].toLowerCase()) {
+      backwardsStr+= str[i];
     }
-    for (let j = 0; j < str.length; j++) {
-      if (str[j].toUpperCase() != str[j].toLowerCase()) {
-        inOrderStr+= str[j];
-      }
+  }
+  for (let j = 0; j < str.length; j++) {
+    if (str[j].toUpperCase() != str[j].toLowerCase()) {
+      inOrderStr+= str[j];
     }
-    if (inOrderStr.toLowerCase() === backwardsStr.toLowerCase()) {
-      return 'true';
+  }
+  if (inOrderStr.toLowerCase() === backwardsStr.toLowerCase()) {
+    return 'true';
+  } else {
+    return 'false'
+  }
+}
+
+//
+
+function CountingMinutes(str) { 
+  let times = str.split('-');
+  let startTime = times[0]; // hour:minute
+  let start = startTime.split(':')
+  let startHour = start[0]; // hour
+  let startMin = start[1][0] + start[1][1];  // minute
+  let startAMorPM = start[1][2] + start[1][3]; // am or pm
+  let startHourAMorPM = startHour + startAMorPM;
+  let endTime = times[1]; // hour:minute
+  let end = endTime.split(':');
+  let endHour = end[0]; // hour
+  let endMin = end[1][0] + end[1][1];  // minute
+  let endAMorPM = end[1][2] + end[1][3]; // am or pm
+  let endHourAMorPM = endHour + endAMorPM;
+
+  let hours = 
+  ['12am', '1am', '2am', '3am', '4am', '5am', '6am', '7am', '8am',
+    '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm',
+    '6pm', '7pm', '8pm', '9pm', '10pm', '11pm', '12am', '1am', '2am', '3am', '4am', '5am', '6am', '7am', '8am',
+    '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm',
+    '6pm', '7pm', '8pm', '9pm', '10pm', '11pm']
+
+  if (startHour === endHour && startMin < endMin && startAMorPM === endAMorPM) {
+    return endMin - startMin;
+  }
+
+  let startInd = 0;
+  let endInd = 0;
+
+  for(let i = 0; i < hours.length; i++) {
+    if (hours[i] === startHourAMorPM) {
+      startInd = i;
+      break;
+    }
+  }
+  for(let i = startInd+1; i < hours.length; i++) {
+    if (hours[i] === endHourAMorPM) {
+      endInd = i;
+      break;
+    }/
+  }
+  let answer = ((endInd-startInd) * 60) - (startMin - endMin);
+  return answer;
+}
+
+//
+
+function ThirdGreatest(strArr) { 
+
+  let greatest = '';
+  let secGreatest = '';
+  let thirdGreatest = '';
+
+  for (let i = 0; i < strArr.length; i++) {
+    if (strArr[i].length > greatest.length) {
+      greatest = strArr[i];
+    }
+  }
+
+  for (let i = 0; i < strArr.length; i++) {
+    if (strArr[i].length > secGreatest.length && strArr[i] !== greatest) {
+      secGreatest = strArr[i];
+    }
+  }
+
+  for (let i = 0; i < strArr.length; i++) {
+    if (strArr[i].length > thirdGreatest.length && strArr[i] !== greatest && strArr[i] !== secGreatest) {
+      thirdGreatest = strArr[i];
+    }
+  }
+
+  return thirdGreatest;
+
+}
+
+//
+
+function ThirdGreatest(strArr) { 
+
+  let greatest = '';
+  let greatestInd = 0;
+  let secGreatest = '';
+  let secGreatestInd = 0;
+  let thirdGreatest = '';
+
+  for (let i = 0; i < strArr.length; i++) {
+    if (strArr[i].length > greatest.length) {
+      greatest = strArr[i];
+      greatestInd = i;
+    }
+  }
+
+  for (let i = 0; i < strArr.length; i++) {
+    if (strArr[i].length > secGreatest.length && i !== greatestInd) {
+      secGreatest = strArr[i];
+      secGreatestInd = i;
+    }
+  }
+
+  for (let i = 0; i < strArr.length; i++) {
+    if (strArr[i].length > thirdGreatest.length && i !== greatestInd && i !== secGreatestInd) {
+      thirdGreatest = strArr[i];
+    }
+  }
+
+  return thirdGreatest;
+
+}
+
+//
+
+function CaesarCipher(str,num) { 
+
+  let alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
+  'n','o','p','q','r','s','t','u','v','w','x','y','z'];
+  
+  let output = '';
+  
+  let temp = 0;
+  
+  for (let i = 0; i < str.length; i++) {
+  
+    if (str[i].toUpperCase() === str[i].toLowerCase() ) {
+      output += str[i];
+    } else if (str[i] === str[i].toUpperCase()) {
+      temp = alphabet.indexOf(str[i].toLowerCase()) + parseInt(num);
+      output += alphabet[temp].toUpperCase();  
     } else {
-      return 'false'
+      temp = alphabet.indexOf(str[i].toLowerCase()) + parseInt(num);
+      output += alphabet[temp];
     }
+    
+  }
+  return output;
   }
 
-  //
+    // if the array position goes past z .. reloop through the array..
+// subtracting the shifts that were already accounted for
 
-  function CountingMinutes(str) { 
-    let times = str.split('-');
-    let startTime = times[0]; // hour:minute
-    let start = startTime.split(':')
-    let startHour = start[0]; // hour
-    let startMin = start[1][0] + start[1][1];  // minute
-    let startAMorPM = start[1][2] + start[1][3]; // am or pm
-    let startHourAMorPM = startHour + startAMorPM;
-    let endTime = times[1]; // hour:minute
-    let end = endTime.split(':');
-    let endHour = end[0]; // hour
-    let endMin = end[1][0] + end[1][1];  // minute
-    let endAMorPM = end[1][2] + end[1][3]; // am or pm
-    let endHourAMorPM = endHour + endAMorPM;
+function CaesarCipher(str,num) { 
+
+  let alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
+  'n','o','p','q','r','s','t','u','v','w','x','y','z'];
   
-    let hours = 
-    ['12am', '1am', '2am', '3am', '4am', '5am', '6am', '7am', '8am',
-     '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm',
-     '6pm', '7pm', '8pm', '9pm', '10pm', '11pm', '12am', '1am', '2am', '3am', '4am', '5am', '6am', '7am', '8am',
-     '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm',
-     '6pm', '7pm', '8pm', '9pm', '10pm', '11pm']
+  let output = '';
   
-    if (startHour === endHour && startMin < endMin && startAMorPM === endAMorPM) {
-      return endMin - startMin;
-    }
+  let temp = 0;
   
-    let startInd = 0;
-    let endInd = 0;
+  for (let i = 0; i < str.length; i++) {
   
-    for(let i = 0; i < hours.length; i++) {
-      if (hours[i] === startHourAMorPM) {
-        startInd = i;
-        break;
+    if (str[i].toUpperCase() === str[i].toLowerCase() ) { // if not a letter 
+      output += str[i];
+    } else if (str[i] === str[i].toUpperCase()) { // if uppercase
+      temp = alphabet.indexOf(str[i].toLowerCase()) + parseInt(num);
+      if (alphabet[temp] === undefined) {
+        output += alphabet[temp - 26].toUpperCase();
+      }else{
+      output += alphabet[temp].toUpperCase();
+      }
+    } else {
+      temp = alphabet.indexOf(str[i].toLowerCase()) + parseInt(num);
+      if (alphabet[temp] === undefined) {
+        output += alphabet[temp - 26]
+      }else{
+      output += alphabet[temp];
       }
     }
-    for(let i = startInd+1; i < hours.length; i++) {
-      if (hours[i] === endHourAMorPM) {
-        endInd = i;
-        break;
-      }/
-    }
-    let answer = ((endInd-startInd) * 60) - (startMin - endMin);
-    return answer;
+    
+  }
+  return output;
   }
 
-  //
+//
 
-  function ThirdGreatest(strArr) { 
-
-    let greatest = '';
-    let secGreatest = '';
-    let thirdGreatest = '';
-  
-    for (let i = 0; i < strArr.length; i++) {
-      if (strArr[i].length > greatest.length) {
-        greatest = strArr[i];
-      }
-    }
-  
-    for (let i = 0; i < strArr.length; i++) {
-      if (strArr[i].length > secGreatest.length && strArr[i] !== greatest) {
-        secGreatest = strArr[i];
-      }
-    }
-  
-    for (let i = 0; i < strArr.length; i++) {
-      if (strArr[i].length > thirdGreatest.length && strArr[i] !== greatest && strArr[i] !== secGreatest) {
-        thirdGreatest = strArr[i];
-      }
-    }
-  
-    return thirdGreatest;
-  
-  }
-
-  //
-
-  function ThirdGreatest(strArr) { 
-
-    let greatest = '';
-    let greatestInd = 0;
-    let secGreatest = '';
-    let secGreatestInd = 0;
-    let thirdGreatest = '';
-  
-    for (let i = 0; i < strArr.length; i++) {
-      if (strArr[i].length > greatest.length) {
-        greatest = strArr[i];
-        greatestInd = i;
-      }
-    }
-  
-    for (let i = 0; i < strArr.length; i++) {
-      if (strArr[i].length > secGreatest.length && i !== greatestInd) {
-        secGreatest = strArr[i];
-        secGreatestInd = i;
-      }
-    }
-  
-    for (let i = 0; i < strArr.length; i++) {
-      if (strArr[i].length > thirdGreatest.length && i !== greatestInd && i !== secGreatestInd) {
-        thirdGreatest = strArr[i];
-      }
-    }
-  
-    return thirdGreatest;
-  
-  }
-
-  //
-
-  function CaesarCipher(str,num) { 
-
-    let alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
-    'n','o','p','q','r','s','t','u','v','w','x','y','z'];
-    
-    let output = '';
-    
-    let temp = 0;
-    
-    for (let i = 0; i < str.length; i++) {
-    
-      if (str[i].toUpperCase() === str[i].toLowerCase() ) {
-        output += str[i];
-      } else if (str[i] === str[i].toUpperCase()) {
-        temp = alphabet.indexOf(str[i].toLowerCase()) + parseInt(num);
-        output += alphabet[temp].toUpperCase();  
-      } else {
-        temp = alphabet.indexOf(str[i].toLowerCase()) + parseInt(num);
-        output += alphabet[temp];
-      }
-      
-    }
-    return output;
-    }
-
-      // if the array position goes past z .. reloop through the array..
-  // subtracting the shifts that were already accounted for
-
-  function CaesarCipher(str,num) { 
-
-    let alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
-    'n','o','p','q','r','s','t','u','v','w','x','y','z'];
-    
-    let output = '';
-    
-    let temp = 0;
-    
-    for (let i = 0; i < str.length; i++) {
-    
-      if (str[i].toUpperCase() === str[i].toLowerCase() ) { // if not a letter 
-        output += str[i];
-      } else if (str[i] === str[i].toUpperCase()) { // if uppercase
-        temp = alphabet.indexOf(str[i].toLowerCase()) + parseInt(num);
-        if (alphabet[temp] === undefined) {
-          output += alphabet[temp - 26]
-        }else{
-        output += alphabet[temp].toUpperCase();
-        }
-      } else {
-        temp = alphabet.indexOf(str[i].toLowerCase()) + parseInt(num);
-        if (alphabet[temp] === undefined) {
-          output += alphabet[temp - 26]
-        }else{
-        output += alphabet[temp];
-        }
-      }
-      
-    }
-    return output;
-    }
-
-
-    //
 

@@ -1017,4 +1017,32 @@ function isPrime(num){
 
   //
 
-  
+  function CaesarCipher(str,num) { 
+
+    let alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
+    'n','o','p','q','r','s','t','u','v','w','x','y','z'];
+    
+    let output = '';
+    
+    let temp = 0;
+    
+    for (let i = 0; i < str.length; i++) {
+    
+      if (str[i].toUpperCase() === str[i].toLowerCase() ) {
+        output += str[i];
+      } else if (str[i] === str[i].toUpperCase()) {
+        temp = alphabet.indexOf(str[i].toLowerCase()) + parseInt(num);
+        output += alphabet[temp].toUpperCase();  
+      } else {
+        temp = alphabet.indexOf(str[i].toLowerCase()) + parseInt(num);
+        output += alphabet[temp];
+      }
+      
+    }
+    return output;
+    }
+
+    //
+
+
+    

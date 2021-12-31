@@ -1092,4 +1092,17 @@ function LongestWord(sen) {
   return longestW;
 }
 
+
+function LongestWord(sen) { 
+  let words = sen.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").split(' ');
+  let longestW = '';
+  for (let i = 0; i < words.length; i++) {
+    let w = words[i];
+    if (w.length > longestW.length) {
+      longestW = w
+    }
+  }
+  return longestW;
+}
 //
+

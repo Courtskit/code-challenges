@@ -1106,3 +1106,35 @@ function LongestWord(sen) {
 }
 //
 
+function FirstReverse(str) { 
+
+  let output = '';
+    for (let i = 1; i < str.length; i++) {
+      output += str[str.length - i]
+    }
+    output += str[0];
+    return output;
+  }
+
+  //
+
+  function FirstFactorial(num) {
+    let sum = 1;
+    for (let i = num; i > 0; i--) {
+      sum *= i
+    }
+    return sum;
+  }
+
+  //
+
+  
+
+
+
+// Review built in methods
+
+// text.split(" ")
+// text.split("")
+// word1.join('')
+// string.split('').reverse().join('');

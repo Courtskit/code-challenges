@@ -1080,4 +1080,16 @@ function CaesarCipher(str,num) {
 
 //
 
+function LongestWord(sen) { 
+  let words = sen.split(' ');
+  let longestW = '';
+  for (let i = 0; i < words.length; i++) {
+    let w = words[i].replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+    if (w > longestW) {
+      longestW = w
+    }
+  }
+  return longestW;
+}
 
+//

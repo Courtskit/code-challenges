@@ -1128,6 +1128,28 @@ function FirstReverse(str) {
 
   //
 
+  function FindIntersection(strArr) { 
+
+    let arr1 = strArr[0].split(', ');
+    let arr2 = strArr[1].split(', ');
+    let output = '';
+  
+    for (let i = 0; i < arr1.length; i++) {
+      if (arr2.includes(arr1[i])){
+        output += arr1[i] + ',';
+      }
+    }
+  
+    if (output === '') {
+      return 'false'
+    } else {
+      return output.substr(0,output.length-1);
+    }
+  }
+
+
+  //
+
   
 
 

@@ -1150,7 +1150,23 @@ function FirstReverse(str) {
 
   //
 
-  
+  function compareTriplets(a, b) {
+    let aa = 0;
+    let bb = 0;
+    for (let i = 0; i < a.length; i++) {
+        if (a[i]>b[i]) {
+            aa++
+        }
+        if (a[i]<b[i]) {
+            bb++
+        }
+    }
+    return aa + ' ' + bb;
+}
+
+//
+
+
 
 
 

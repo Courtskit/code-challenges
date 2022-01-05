@@ -1174,6 +1174,18 @@ function aVeryBigSum(ar) {
   return sum
 }
 
+//
+
+function FirstReverse(str) { 
+  let splitStr = str.split("");
+  let rev = splitStr.reverse();
+  let joinStr = rev.join("");
+  return joinStr;
+}
+
+//
+
+
 
 
 // Review built in methods

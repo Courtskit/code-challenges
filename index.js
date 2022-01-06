@@ -1202,8 +1202,47 @@ let AlphaSoup = (str) => {
 
 //
 
+let FibChecker = (num) => {
+  let num1 = 0;
+  let num2 = 1;
+  let totSum = 0;
+  for (let i = 0; i < num; i++) {
+    num1 = num2;
+    num2 = totSum;
+    totSum = num1 + num2;
+    if (totSum === num) {
+      return 'yes';
+    }
+  }
+  return 'no';
+}
+
+//
+
+let StrScramble = (str1, str2) => {
+  for (let i = 0; i < str1.length; i++) {
+    if (str2.includes(str1[i])) {
+       str2 = str2.replace(str1[i], '')
+    }
+  }
+  if (str2 === '') {
+    return 'true'
+  } else {
+    return 'false'
+  }
+}
 
 
+let StrScramble = (str1, str2) => {
+  for (let i = 0; i < str1.length; i++) {
+    if (str2.includes(str1[i])) {
+       str2 = str2.replace(str1[i], '')
+    }
+  }
+  return str2 === '' ? 'true' : 'false';
+}
+
+// 
 
 // Review built in methods
 

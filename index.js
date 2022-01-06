@@ -1185,6 +1185,23 @@ function FirstReverse(str) {
 
 //
 
+let AlphaSoup = (str) => {
+  let alpha = 'abcdefghijklmnopqrstuvwxyz'
+  let indexs = [];
+  let output = '';
+  for (let i =0; i < str.length; i++) {
+    console.log(str[i])
+    indexs.push(alpha.indexOf(str[i]))
+  }
+  indexs.sort(function(a, b){return a-b})
+  for (let i = 0; i < indexs.length; i++) {
+    output += alpha[indexs[i]]
+  }
+  return output
+}
+
+//
+
 
 
 

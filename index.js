@@ -1262,6 +1262,80 @@ let Palindrome = (str) => {
   }
 }
 
+
+let Palindrome = (str) => {
+  let regex = /^[a-z]+$/i;
+  let letters = '';
+  for (let i = 0; i < str.length; i++) {
+    if (regex.test(str[i])) {
+      letters += str[i];
+    }
+  }
+  let split = letters.split('');
+  let reverse = split.reverse();
+  let reversedStr = reverse.join('');
+  return letters.toLowerCase() === reversedStr.toLowerCase() ? 'true' : 'false';
+}
+
+
+//
+
+let CountingMinutes = (str) => {
+  let timesArr = str.split('-');
+  let startTime = timesArr[0];
+  let startHour = parseInt(startTime.split(':')[0]);
+  let startMin = startTime.split(':')[1][0] + startTime.split(':')[1][1];
+  let startAmPm = 'pm';
+  if (startTime.includes('am')) {
+    startAmPm = 'am';
+  }
+  let endTime = timesArr[1];
+  let endHour = parseInt(endTime.split(':')[0]);
+  let endMin = endTime.split(':')[1][0] + endTime.split(':')[1][1];
+  let endAmPm = 'pm';
+  if (endTime.includes('am')) {
+    endAmPm = 'am';
+  }
+
+  // gets me total military minutes of the hour
+  function militaryTime(time){
+    let hour = time.split(':')[0];
+    if (time.includes('pm') && hour !== '12'){
+      let militaryHour = parseInt(hour) + 12;
+      let totalMin = militaryHour * 60;
+      return totalMin
+    } else if (time.includes('am') && hour !== '12'){
+      let totalMin = parseInt(hour) * 60;
+      return totalMin;
+    } else if (time.includes('am') && hour === '12'){
+      let totalMin = 0;
+      return totalMin;
+    } else if (time.includes('pm') && hour === '12'){
+      let totalMin = parseInt(hour) * 60;
+      return totalMin;
+    }
+  }
+  // total military minutes of start time
+  let startMilitary = militaryTime(startTime) + parseInt(startMin);
+  // total military minutes of end time
+  let endMilitary = militaryTime(endTime) + parseInt(endMin);
+
+  if (startMilitary > endMilitary) {
+    let diff = Math.abs(startMilitary - 1439);
+    let totalMin = endMilitary + diff + 1;
+    return totalMin;
+  }else {
+    return endMilitary - startMilitary;
+  }
+}
+
+// CountingMinutes('12:39pm-12:38pm');
+// CountingMinutes('12:30pm-12:32am');
+// CountingMinutes('11:30pm-12:32pm');
+// CountingMinutes('11:59pm-12:32pm');
+// CountingMinutes('2:29pm-7:29pm');
+// CountingMinutes('11:59pm-12:32pm');
+
 //
 
 

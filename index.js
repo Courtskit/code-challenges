@@ -1244,6 +1244,27 @@ let StrScramble = (str1, str2) => {
 
 // 
 
+let Palindrome = (str) => {
+  let regex = /^[a-z]+$/i;
+  let letters = '';
+  for (let i = 0; i < str.length; i++) {
+    if (regex.test(str[i])) {
+      letters += str[i];
+    }
+  }
+  let split = letters.split('');
+  let reverse = split.reverse();
+  let reversedStr = reverse.join('');
+  if (letters.toLowerCase() === reversedStr.toLowerCase()) {
+    return 'true'
+  } else {
+    return 'false'
+  }
+}
+
+//
+
+
 // Review built in methods
 
 // text.split(" ")

@@ -1338,6 +1338,26 @@ let CountingMinutes = (str) => {
 
 //
 
+function DistinctList(arr) {
+  let singles = [];
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (singles.includes(arr[i])) {
+      count++;
+    } else {
+      singles.push(arr[i]);
+    }
+  }
+  return count;
+}
+
+// DistinctList([0,-2,-2,5,5,5])
+DistinctList([100, 2, 101, 4])
+
+//
+
+
+
 
 // Review built in methods
 

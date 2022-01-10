@@ -1356,6 +1356,14 @@ DistinctList([100, 2, 101, 4])
 
 //
 
+function ReverseString(str) {
+  let arr = str.split(' ');
+  let reversedArr = arr.reverse()
+  let joined = reversedArr.join()
+  return joined
+}
+
+//
 
 
 

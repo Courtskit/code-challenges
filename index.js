@@ -1365,6 +1365,18 @@ function ReverseString(str) {
 
 //
 
+let RotateString = (str, num) => {
+  let split = str.split('')
+  while (num !== 0) {
+    split.unshift(split.pop())
+    console.log(split)
+    num--
+  }
+  return split;
+}
+
+//
+
 
 
 // Review built in methods

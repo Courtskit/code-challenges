@@ -1377,7 +1377,18 @@ let RotateString = (str, num) => {
 
 //
 
-
+let CeasarCipher = (str, num) => {
+  let alpha = 'abcdefghijklmnopqrstuvwxyz'
+  let index = 0;
+  let output = '';
+  for (let i = 0; i < str.length; i++) {
+    if (alpha.includes(str[i])) {
+      index = alpha.indexOf(str[i]);
+      output += alpha[index + num];     
+    }
+  }
+  return output;
+}
 
 // Review built in methods
 

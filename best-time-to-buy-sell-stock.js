@@ -12,8 +12,19 @@
 
 var maxProfit = function(prices) {
 
+  let buy = 0;
+  let sell = 1;  
+  let maxP = 0;
 
-
+  while sell < prices.length() {
+    if (prices[buy] < prices[sell]){
+      profit = prices[sell] - prices[buy];
+      maxP = max(maxP, profit);
+    }
+    else {
+      
+    }
+  }
 
 };
 

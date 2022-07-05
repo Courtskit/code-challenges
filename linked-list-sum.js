@@ -10,12 +10,9 @@ const sumList = (head) => {
 }
 
 
-
-
-
 //recursive way
 
-const sumList = (head) => {
+const sumListWithRecursion = (head) => {
   if (head === null) return 0;
   return head.val + sumList(head.next);
 }
